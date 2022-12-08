@@ -7,21 +7,15 @@ module.exports = {
       'user_id_teacher',
       {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        defaultValue: 1,
-        references: { model: 'users', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+        allowNull: true,
+        defaultValue: 1
       }
     );
      
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.removeColumn(
-      'schools',
-      'user_id_teacher'
-    );
      
   }
 };
+
